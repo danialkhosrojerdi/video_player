@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'colors.dart' as color;
 
 class MyHomePage extends StatefulWidget {
@@ -14,80 +15,120 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: color.AppColor.homePageBackground,
       body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
-        child: Container(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Text(
-                    'Training',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w600,
-                      color: color.AppColor.homePageTitle,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
+          child: Container(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      'Training',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600,
+                        color: color.AppColor.homePageTitle,
+                      ),
+                    ),
+                    Expanded(child: Container()),
+                    Icon(
+                      Icons.arrow_back_ios,
+                      color: color.AppColor.homePageIcons,
+                      size: 20,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Icon(
+                      Icons.calendar_today_outlined,
+                      color: color.AppColor.homePageIcons,
+                      size: 20,
+                    ),
+                    SizedBox(
+                      width: 14,
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: color.AppColor.homePageIcons,
+                      size: 20,
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Your Program',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: color.AppColor.homePageSubtitle,
+                      ),
+                    ),
+                    Expanded(child: Container()),
+                    Text(
+                      'Details',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: color.AppColor.homePageDetail,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Icon(
+                      Icons.arrow_forward,
+                      size: 20,
+                      color: color.AppColor.homePageIcons,
+                    )
+                  ],
+                ),
+                SizedBox(height: 20),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 220,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          color.AppColor.gradientFirst.withOpacity(0.8),
+                          color.AppColor.gradientSecond.withOpacity(0.9)
+                        ],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                        topRight: Radius.circular(70),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(5, 5),
+                          blurRadius: 20,
+                          color: color.AppColor.gradientSecond.withOpacity(0.3),
+                        )
+                      ]),
+                  child: Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Next workout',
+                          style: TextStyle(
+                              color: color.AppColor.homePageContainerTextSmall),
+                        )
+                      ],
                     ),
                   ),
-                  Expanded(child: Container()),
-                  Icon(
-                    Icons.arrow_back_ios,
-                    color: color.AppColor.homePageIcons,
-                    size: 20,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Icon(
-                    Icons.calendar_today_outlined,
-                    color: color.AppColor.homePageIcons,
-                    size: 20,
-                  ),
-                  SizedBox(
-                    width: 14,
-                  ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: color.AppColor.homePageIcons,
-                    size: 20,
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Row(
-                children: [
-                  Text(
-                    'Your Program',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: color.AppColor.homePageSubtitle,
-                    ),
-                  ),
-                  Expanded(child: Container()),
-                  Text(
-                    'Details',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: color.AppColor.homePageDetail,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Icon(
-                    Icons.arrow_forward,
-                    size: 20,
-                    color: color.AppColor.homePageIcons,
-                  )
-                ],
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
-      )),
+      ),
     );
   }
 }
