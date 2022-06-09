@@ -111,17 +111,158 @@ class _MyHomePageState extends State<MyHomePage> {
                           color: color.AppColor.gradientSecond.withOpacity(0.3),
                         )
                       ]),
-                  child: Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Next workout',
-                          style: TextStyle(
-                              color: color.AppColor.homePageContainerTextSmall),
-                        )
-                      ],
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(top: 15, left: 15, right: 15),
+                    child: Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Next workout',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color:
+                                    color.AppColor.homePageContainerTextSmall),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            'Legs Toning',
+                            style: TextStyle(
+                                fontSize: 25,
+                                color: color.AppColor.homePageContainerTextBig),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            'and Glutes Workout',
+                            style: TextStyle(
+                                fontSize: 25,
+                                color: color.AppColor.homePageContainerTextBig),
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.timer_outlined,
+                                    color: color
+                                        .AppColor.homePageContainerTextSmall,
+                                    size: 20,
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    '60 min',
+                                    style: TextStyle(
+                                        color: color.AppColor
+                                            .homePageContainerTextSmall),
+                                  ),
+                                ],
+                              ),
+                              Expanded(
+                                child: Container(),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(4, 8),
+                                          blurRadius: 10,
+                                          color: color.AppColor.gradientFirst)
+                                    ]),
+                                child: Icon(
+                                  Icons.play_circle_fill,
+                                  size: 60,
+                                  color:
+                                      color.AppColor.homePageContainerTextSmall,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
+                  ),
+                ),
+                Container(
+                  height: 180,
+                  width: MediaQuery.of(context).size.width,
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: 120,
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.only(top: 35),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                            image: AssetImage('assets/card.jpg'),
+                            fit: BoxFit.fill,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(3, 8),
+                              color: color.AppColor.gradientSecond
+                                  .withOpacity(0.3),
+                              blurRadius: 20,
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 200,
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.only(right: 200, bottom: 30),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/figure.png'),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: double.maxFinite,
+                        height: 100,
+                        margin: EdgeInsets.only(left: 150, top: 50),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'You are doing great',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: color.AppColor.homePageDetail,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                text: 'Keep it up\n',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: color.AppColor.homePagePlanColor,
+                                ),
+                                children: [
+                                  TextSpan(text: 'Stick to your plan'),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 )
               ],
