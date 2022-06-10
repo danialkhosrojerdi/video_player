@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:video_player_app/video_info_page.dart';
 
 import 'colors.dart' as color;
 
@@ -78,10 +82,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(
                       width: 5,
                     ),
-                    Icon(
-                      Icons.arrow_forward,
-                      size: 20,
-                      color: color.AppColor.homePageIcons,
+                    InkWell(
+                      onTap: () => Get.to(VideoInfo()),
+                      child: Icon(
+                        Icons.arrow_forward,
+                        size: 20,
+                        color: color.AppColor.homePageIcons,
+                      ),
                     )
                   ],
                 ),
@@ -264,7 +271,75 @@ class _MyHomePageState extends State<MyHomePage> {
                       )
                     ],
                   ),
-                )
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Area of focus',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Expanded(
+                    child: OverflowBox(
+                  maxWidth: MediaQuery.of(context).size.width,
+                  child: FutureBuilder(
+                      future: DefaultAssetBundle.of(context)
+                          .loadString('json/info.json'),
+                      builder: (context, snapshot) {
+                        var newData = json.decode(snapshot.data.toString());
+                        return GridView.builder(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                          ),
+                          itemCount: newData == null ? 0 : newData.length,
+                          itemBuilder: (_, i) {
+                            return Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Container(
+                                padding: EdgeInsets.only(bottom: 10),
+                                width: MediaQuery.of(context).size.width,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.white,
+                                  image: DecorationImage(
+                                    image: AssetImage(newData[i]['img']),
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 5,
+                                      color: color.AppColor.gradientFirst
+                                          .withOpacity(0.2),
+                                      offset: Offset(5, 5),
+                                    ),
+                                    BoxShadow(
+                                      blurRadius: 5,
+                                      color: color.AppColor.gradientFirst
+                                          .withOpacity(0.2),
+                                      offset: Offset(-5, -5),
+                                    )
+                                  ],
+                                ),
+                                child: Center(
+                                  child: Align(
+                                    alignment: Alignment.bottomCenter,
+                                    child: Text(newData[i]['title']),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      }),
+                ))
               ],
             ),
           ),
