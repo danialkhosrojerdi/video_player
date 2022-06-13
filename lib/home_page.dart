@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: color.AppColor.homePageIcons,
                       size: 20,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Icon(
@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: color.AppColor.homePageIcons,
                       size: 20,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 14,
                     ),
                     Icon(
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
@@ -79,11 +79,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: color.AppColor.homePageDetail,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     InkWell(
-                      onTap: () => Get.to(VideoInfo()),
+                      onTap: () => Get.to(() => const VideoInfo()),
                       child: Icon(
                         Icons.arrow_forward,
                         size: 20,
@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     )
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 220,
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         begin: Alignment.bottomLeft,
                         end: Alignment.centerRight,
                       ),
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(10),
                         bottomLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10),
@@ -113,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          offset: Offset(5, 5),
+                          offset: const Offset(5, 5),
                           blurRadius: 20,
                           color: color.AppColor.gradientSecond.withOpacity(0.3),
                         )
@@ -132,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color:
                                     color.AppColor.homePageContainerTextSmall),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Text(
@@ -141,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fontSize: 25,
                                 color: color.AppColor.homePageContainerTextBig),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Text(
@@ -150,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fontSize: 25,
                                 color: color.AppColor.homePageContainerTextBig),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           Row(
@@ -164,7 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         .AppColor.homePageContainerTextSmall,
                                     size: 20,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
                                   Text(
@@ -183,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     shape: BoxShape.circle,
                                     boxShadow: [
                                       BoxShadow(
-                                          offset: Offset(4, 8),
+                                          offset: const Offset(4, 8),
                                           blurRadius: 10,
                                           color: color.AppColor.gradientFirst)
                                     ]),
@@ -201,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 180,
                   width: MediaQuery.of(context).size.width,
                   child: Stack(
@@ -209,16 +209,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(
                         height: 120,
                         width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.only(top: 35),
+                        margin: const EdgeInsets.only(top: 35),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
+                          image: const DecorationImage(
                             image: AssetImage('assets/card.jpg'),
                             fit: BoxFit.fill,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              offset: Offset(3, 8),
+                              offset: const Offset(3, 8),
                               color: color.AppColor.gradientSecond
                                   .withOpacity(0.3),
                               blurRadius: 20,
@@ -229,8 +229,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(
                         height: 200,
                         width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.only(right: 200, bottom: 30),
-                        decoration: BoxDecoration(
+                        margin: const EdgeInsets.only(right: 200, bottom: 30),
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('assets/figure.png'),
                           ),
@@ -239,7 +239,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(
                         width: double.maxFinite,
                         height: 100,
-                        margin: EdgeInsets.only(left: 150, top: 50),
+                        margin: const EdgeInsets.only(left: 150, top: 50),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -251,7 +251,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: color.AppColor.homePageDetail,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             RichText(
@@ -261,7 +261,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   fontSize: 16,
                                   color: color.AppColor.homePagePlanColor,
                                 ),
-                                children: [
+                                children: const [
                                   TextSpan(text: 'Stick to your plan'),
                                 ],
                               ),
@@ -273,7 +273,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Row(
-                  children: [
+                  children: const [
                     Text(
                       'Area of focus',
                       style: TextStyle(
@@ -283,7 +283,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Expanded(
@@ -296,7 +296,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         var newData = json.decode(snapshot.data.toString());
                         return GridView.builder(
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                           ),
                           itemCount: newData == null ? 0 : newData.length,
@@ -304,7 +304,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             return Padding(
                               padding: const EdgeInsets.all(20.0),
                               child: Container(
-                                padding: EdgeInsets.only(bottom: 10),
+                                padding: const EdgeInsets.only(bottom: 10),
                                 width: MediaQuery.of(context).size.width,
                                 height: 200,
                                 decoration: BoxDecoration(
@@ -318,13 +318,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                       blurRadius: 5,
                                       color: color.AppColor.gradientFirst
                                           .withOpacity(0.2),
-                                      offset: Offset(5, 5),
+                                      offset: const Offset(5, 5),
                                     ),
                                     BoxShadow(
                                       blurRadius: 5,
                                       color: color.AppColor.gradientFirst
                                           .withOpacity(0.2),
-                                      offset: Offset(-5, -5),
+                                      offset: const Offset(-5, -5),
                                     )
                                   ],
                                 ),
